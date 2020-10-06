@@ -1,0 +1,194 @@
+<html lang="zh-CN">
+
+<head>
+    <!--/公共jsp -->
+
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!-- 用来禁止浏览器缓存，使得每次请求test.html都从服务器下载最新版本 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="format-detection" content="telephone=yes">
+
+    <script type="text/javascript">
+        function appendZero(num){
+            if(num < 10){
+                num = "0" + num;
+            }
+            return num;
+        }
+
+        function showTime(){
+            "use strict";
+            //创建Date对象获取系统星期和时分秒
+            var showtime = appendZero(new Date().getHours()) + ":" + appendZero(new Date().getMinutes()) + ":" 
+               + appendZero(new Date().getSeconds());
+            //将获取到的星期数字转换成平时我们看到的字符串形式
+            
+            //获取元素ID
+            var elementDiv=document.getElementById("time");
+            // window.alert(elementDiv.innerText)
+            // var elementDiv=document.getElementsByClassName("jkmgxsj-sj");
+            elementDiv.innerText=showtime;	
+        }
+        function showDate(){
+            "use strict";
+            //创建Date对象获取系统星期和时分秒
+            var showtime = appendZero(new Date().getMonth() + 1) + "月" + appendZero(new Date().getDay()) + "日";
+            //将获取到的星期数字转换成平时我们看到的字符串形式
+            
+            //获取元素ID
+            var elementDiv=document.getElementById("date1");
+            // window.alert(elementDiv.innerText)
+            // var elementDiv=document.getElementsByClassName("jkmgxsj-sj");
+            elementDiv.innerText=showtime;	
+        }
+        //实现时间动态变化
+        window.setInterval("showTime()",1000);
+        window.setInterval("showDate()",1000);
+    </script>
+
+    <link rel="stylesheet" href="./statis/bh-lib.min.css">
+    <link rel="stylesheet" href="./statis/iconfont.css">
+    <link rel="stylesheet" href="./statis/style.css">
+    <link rel="stylesheet" href="./statis/mob.css">
+    <link rel="stylesheet" href="./statis/skin.css">
+    <link rel="stylesheet" href="./statis/style.min.css">
+    <link rel="stylesheet" href="./statis/cropper.min.css">
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js?v=1590982225633"></script>
+
+    
+
+</head>
+
+<body data-gr-c-s-loaded="true">
+
+
+    <div id="app">
+        <!---->
+        <div class="mint-layout-container">
+            <div class="mint-layout-container fxyq_fxsq fxyq_wcsq" style="margin-bottom: 60px;">
+                <div class="mint-layout-container">
+                    <div class="sq-xslbdm-yjs">
+                        <div class="mint-layout-container bh-bg-color-light xszp_image"><img src="statis/hanying.png" class="mint-image" style="width: 100px; height: 130px; margin: 3px;"></div>
+                        <div class="xsxx" style="width: calc(100vw - 160px);">
+                            <div>3119107038&nbsp;韩颖
+                                <span style="font-size: 14px; margin-left: 10px;">研究生</span></div>
+                            <div>数学与统计学院/师范班</div>
+                        </div>
+                    </div>
+                    <div class="mint-layout-container modal-bak" style="display: none;">
+                        <div class="mint-text mt-color-grey" style="text-align: center; font-size: 18px; color: rgb(19, 21, 45); line-height: 22px; padding-top: 20px;"><span class="mint-icon" style="color: red; position: relative; top: 3px;"><i class="iconfont mint-icon-i icon-erroroutline" style="font-size: 30px;"></i></span>
+                            未安排返校
+                        </div>
+                        <div class="mint-text mt-color-grey" style="font-size: 14px; color: rgb(118, 122, 140); line-height: 20px; padding: 30px; text-align: center;">学校暂未安排您进行返校，请耐心等待学校安排!</div>
+                    </div>
+
+
+
+
+                    <div class="mint-layout-container OPjczlssvm" style="">
+                        <div style="background-color: white; padding-bottom: 100px; min-height: 500px;">
+                            <div style="padding: 10px 0px 0px 25px;">
+                                <div class="jkmgxsj-title">当前时间：</div>
+                                <div><span class="jkmgxsj-rq" id="date1"></span> <span class="jkmgxsj-sj" id="time"></span></div>
+                            </div>
+                            <div style="line-height: 30px; padding-top: 4px; padding-left: 25px; font-size: 12px; display: none;">
+                                尚未完成报到登记，请于
+                                <span style="color: rgb(255, 185, 80);">2020-05-23</span> <span style="display: none;">至</span> <span style="color: rgb(255, 185, 80); display: none;">2020-05-23</span>
+                                到校报到
+                            </div>
+                            <div style="line-height: 30px; padding-top: 8px; padding-left: 25px; font-size: 14px; ">
+                                已于&nbsp;2020-05-23 22:32:02&nbsp;完成报到登记
+                            </div>
+                            <div style="line-height: 30px; padding-top: 4px; padding-left: 25px; font-size: 14px; ">
+                                外出时间
+                                <span style="color: rgb(255, 185, 80);">2020-05-31 13:01</span> <span style="">至</span> <span style="color: rgb(255, 185, 80); ">2020-06-30 23:00</span></div>
+                            <div class="mint-text mt-color-grey" style="line-height: 30px; display: none;">&nbsp;&nbsp;</div>
+                            <div class="mint-text mt-color-grey" style="line-height: 5px;">&nbsp;&nbsp;</div>
+                            <div style="border: 1px solid rgb(232, 232, 232); width: 250px; height: 240px; margin-left: calc(50vw - 130px); margin-bottom: 8px; position: relative;">
+                                <div style="width: 170px; height: 170px; display: inline-block; margin: 40px 40px 20px;">
+                                    <div id="applyed_school_code" title="               A2C2369E769552CFE053E207310A2D92               " style="margin: 10px;"><canvas width="150" height="150" style="display: none;"></canvas><img alt="Scan me!" style="display: block;" src="data:image/png;base64,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"></div>
+                                </div>
+                                <div style="position: absolute; top: 0px; display: none;"><img src="./media/xsjkm_bg.png" class="mint-image" style="height: 30px;"></div>
+                                <div style="position: absolute; top: 0px;"><img src="./media/xsjkm_bg1.png" class="mint-image" style="height: 30px;"></div>
+                                <div style="position: absolute; top: 0px; display: none;"><img src="./media/xsjkm_bg2.png" class="mint-image" style="height: 30px;"></div>
+                                <div style="position: absolute; top: 0px; line-height: 31px; font-size: 16px; color: white; left: 35px;">
+                                    研究生
+                                </div>
+                            </div>
+                            <!---->
+                            <!---->
+                            <div class="mint-text mt-color-grey" style="font-size: 14px; color: rgb(128, 0, 128); line-height: 20px; display: none;">
+                                黄码原因：数据不完整
+                                <div class="mint-text mt-color-grey" style="font-size: 14px; color: rgb(0, 112, 192); line-height: 20px; display: none;">(详情)</div>
+                            </div>
+                            <div class="mint-text mt-color-grey" style="font-size: 12px; color: rgb(128, 0, 128); padding-top: 2px; line-height: 20px; display: none;">
+                                (返校提交前在返校申请时补充，其他时候在健康大厅中补充)
+                            </div>
+                            <div style="padding-top: 0px; text-align: center; font-size: 16px; text-align: center;">
+                                校园最安全，外出有风险
+                            </div>
+                            <div style="padding-top: 2px; text-align: center; font-size: 16px; ">
+                                其他必须外出的情况
+                            </div>
+                            <div style="padding-top: 2px; text-align: center; font-size: 14px; color: rgb(146, 150, 156); margin-bottom: 20px; display: none;">
+                                请到校后向学校办理人员出示此二维码
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mint-tabbar mt-bg-lv3 mt-bColor-grey-lv6 is-fixed"><a class="mint-tab-item is-selected ">
+                    <div class="mint-tab-item-icon"><i class="iconfont mt-color-theme icon-daibanshiyiicon"></i>
+                        <!---->
+                        <!---->
+                    </div>
+                    <div class="mint-tab-item-label mt-color-theme">
+                        交大校园码
+                    </div>
+                    <!---->
+                </a><a class="mint-tab-item">
+                    <div class="mint-tab-item-icon"><i class="iconfont mt-color-grey-lv3 icon-daibanshiyiicon"></i>
+                        <!---->
+                        <!---->
+                    </div>
+                    <div class="mint-tab-item-label mt-color-grey-lv3">
+                        返校申请
+                    </div>
+                    <!---->
+                </a><a class="mint-tab-item">
+                    <div class="mint-tab-item-icon"><i class="iconfont mt-color-grey-lv3 icon-daibanshiyiicon"></i>
+                        <!---->
+                        <!---->
+                    </div>
+                    <div class="mint-tab-item-label mt-color-grey-lv3">
+                        外出申请
+                    </div>
+                    <!---->
+                </a><a class="mint-tab-item">
+                    <div class="mint-tab-item-icon"><i class="iconfont mt-color-grey-lv3 icon-daibanshiyiicon"></i>
+                        <!---->
+                        <!---->
+                    </div>
+                    <div class="mint-tab-item-label mt-color-grey-lv3">
+                        转码申请
+                    </div>
+                    <!---->
+                </a></div>
+        </div>
+    </div>
+
+
+    <div class="mint-indicator" style="display: none;">
+        <div class="mint-indicator-wrapper" style="padding: 15px;"><span class="mint-indicator-spin">
+                <div class="mint-spinner-snake" style="border-top-color: rgb(214, 214, 214); border-left-color: rgb(214, 214, 214); border-bottom-color: rgb(214, 214, 214); height: 32px; width: 32px;"></div>
+            </span><span class="mint-indicator-text" style="display: none;"></span></div>
+        <div class="mint-indicator-mask"></div>
+    </div>
+</body>
+
+</html>
